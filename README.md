@@ -13,7 +13,7 @@
 # gptBLEND
 Describe the 3D model you want to create in plain English, and the script will generate the corresponding Python code that Blender can understand. It's like having a magical genie at your fingertips!
 
-Imagine you are a wizard with the power to create 3D models in Blender, but instead of waving a wand or muttering incantations, you use natural language. That's what our script does!
+Imagine you are a wizard with the power to create 3D models in Blender, but instead of waving a wand or muttering incantations, you use natural language. That's what my script does!
 
    • Open a terminal window.
    • Navigate to the directory where the script is located.
