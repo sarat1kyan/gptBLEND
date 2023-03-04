@@ -13,11 +13,6 @@ banner1() {
   echo "+$line+"
 }
 
-# Check if script is being run as root
-#if [[ $EUID -ne 0 ]]; then
-#  banner1 "This script must be run as root."
-#  exit 1
-#fi
 
 #clolors
 white='\e[1;37m'
@@ -60,7 +55,7 @@ dependencies="curl jq blender python python3"
 missing_dependencies=()
 
 for dependency in $dependencies; do
-    if ! command -v "$dependency" >/dev/null 2>&1 ; then
+    if ! command -v "$dependency" >$LOG_FILE 2>&1 ; then
         missing_dependencies+=("$dependency")
     fi
 done
@@ -71,24 +66,24 @@ if [ ${#missing_dependencies[@]} -gt 0 ]; then
 
     if [[ "$install_deps" == "y" ]]; then
         # Detect package manager
-        if command -v apt &> /dev/null; then
+        if command -v apt &> $LOG_FILE; then
             sudo apt install "${missing_dependencies[@]}"
-            sudo pip install openai
-        elif command -v yum &> /dev/null; then
+            pip install openai torch transformers
+        elif command -v yum &> $LOG_FILE; then
             sudo yum install "${missing_dependencies[@]}"
-            sudo pip install openai
-        elif command -v pacman &> /dev/null; then
+            pip install openai torch transformers
+        elif command -v pacman &> $LOG_FILE; then
             sudo pacman -S "${missing_dependencies[@]}"
-            sudo pip install openai
-        elif command -v dnf &> /dev/null; then
+            pip install openai torch transformers
+        elif command -v dnf &> $LOG_FILE; then
             sudo dnf install "${missing_dependencies[@]}"
-            sudo pip install openai
-        elif command -v zypper &> /dev/null; then
+            pip install openai torch transformers
+        elif command -v zypper &> $LOG_FILE; then
             sudo zypper install "${missing_dependencies[@]}"
-            sudo pip install openai
-        elif command -v apk &> /dev/null; then
+            pip install openai torch transformers
+        elif command -v apk &> $LOG_FILE; then
             sudo apk add "${missing_dependencies[@]}"
-            sudo pip install openai
+            pip install openai torch transformers
         else
             banner1 "Error: Could not detect supported package manager. Please install the missing dependencies manually."
             exit 1
@@ -127,8 +122,9 @@ if [ -z "$code" ]; then
 fi
 
 # Save the Python code to a file
-banner1 "$code" > blend.py
+echo "$code" > blend.py
 
-# Execute the Python code in Blender
-blender --background --python blend.py >> "$LOG_FILE" 2>&
+# Run the blender command
+blender -b -P blend.py
 
+banner1 "Blending complete."
