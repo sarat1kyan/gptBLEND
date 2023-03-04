@@ -14,10 +14,10 @@ banner1() {
 }
 
 # Check if script is being run as root
-if [[ $EUID -ne 0 ]]; then
-  banner1 "This script must be run as root."
-  exit 1
-fi
+#if [[ $EUID -ne 0 ]]; then
+#  banner1 "This script must be run as root."
+#  exit 1
+#fi
 
 #clolors
 white='\e[1;37m'
