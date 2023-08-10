@@ -11,7 +11,7 @@
 
 
 # gptBLEND
-Describe the 3D model you want to create in plain English, and the script will generate the corresponding Python code that Blender can understand. It's like having a magical genie at your fingertips!
+      Describe the 3D model you want to create in plain English, and the script will generate the corresponding Python code that Blender can understand. It's like having a magical genie at your fingertips!
 
 Imagine you are a wizard with the power to create 3D models in Blender, but instead of waving a wand or muttering incantations, you use natural language. That's what my script does!
 
@@ -27,3 +27,5 @@ Imagine you are a wizard with the power to create 3D models in Blender, but inst
    • If there are any errors during the process, the script will print an error message and exit.
 
 Note that you should replace "YOUR_API_KEY" with your actual API key for the ChatGPT API. Additionally, make sure you have installed the jq tool to extract the generated Python code from the API response.
+
+      p.s. if there is any problem while running just remove the banner part ;)
