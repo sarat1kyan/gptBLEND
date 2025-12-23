@@ -5,22 +5,50 @@
       |_  |  _|_| |_____|_____|_____|_|___|____/ 
       |___|_|                                    
 
-# gptBLEND
-      Describe the 3D model you want to create in plain English, and the script will generate the corresponding Python code that Blender can understand. It's like having a magical genie at your fingertips!
 
-Imagine you are a wizard with the power to create 3D models in Blender, but instead of waving a wand or muttering incantations, you use natural language. That's what my script does!
+# 🎨 gptBLEND v2.0
 
-   • Open a terminal window.
-   • Navigate to the directory where the script is located.
-   • Run the script using the command ./gptBLEND.sh (when using linux based system) and gptBLEND.bat (when using windows based system)
-   • Read the usage instructions that are displayed in the terminal.
-   • Enter a prompt that describes the Python code you want to generate.
-      For example, "Generate Python code to create a 3D model of a car in Blender."
-   • Press Enter to submit the prompt.
-   • The script will validate the prompt and send a request to the ChatGPT API to generate Python code.
-   • If the API response includes generated Python code, the script will save the code to a file named script.py and execute the code in Blender.
-   • If there are any errors during the process, the script will print an error message and exit.
+<div align="center">
 
-Note that you should replace "YOUR_API_KEY" with your actual API key for the ChatGPT API. Additionally, make sure you have installed the jq tool to extract the generated Python code from the API response.
+**AI-Powered Blender Script Generator**
 
-      p.s. if there is any problem while running just remove the banner part ;)
+Describe 3D models in plain English, and watch as AI generates the Blender Python code to create them!
+
+![gptBLEND Banner](https://img.shields.io/badge/gptBLEND-AI%20Blender%20Assistant-blue)
+![Version](https://img.shields.io/badge/version-2.0-green)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
+
+</div>
+
+## ✨ Features
+
+- **Natural Language Processing**: Describe scenes in plain English
+- **Multiple AI Models**: Supports GPT-4, GPT-3.5-turbo, and more
+- **Safety First**: Generated code runs in protected environment
+- **Interactive Menu**: Easy-to-use interface with options
+- **Logging**: Track all generations and executions
+- **Cross-Platform**: Works on Windows, Linux, and macOS
+- **Configurable**: Customize API settings and output
+
+## 📋 Prerequisites
+
+### Required Tools
+- **Blender** (3.0 or higher)
+- **curl** (for API requests)
+- **jq** (for JSON parsing)
+- **OpenAI API key** ([Get one here](https://platform.openai.com/api-keys))
+
+### Optional Tools
+- **Git** (for cloning repository)
+- **Python 3.8+** (for advanced customization)
+
+## 🚀 Quick Start
+
+### Windows
+```bash
+# 1. Download the script
+git clone https://github.com/sarat1kyan/gptBLEND.git
+cd gptBLEND
+
+# 2. Run the script
+gptBLEND.bat
